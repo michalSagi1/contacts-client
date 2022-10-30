@@ -1,0 +1,39 @@
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    position: sticky;
+    top: 0%;
+    background: #4D3F5A 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 6px #0000000A;
+}
+
+.headerInnerWidth {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workshopHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    gap: 24px;
+}
+
+.headerUser {
+    object-fit: contain;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+}
+
+
+.titleHeader {
+    font-weight: normal;
+    font-size: 19px;
+    color: #ffffff;
+    font-family: 'heebo';
+}
