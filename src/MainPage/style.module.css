@@ -1,0 +1,33 @@
+.main {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.submain {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.title {
+    width: 132px;
+    height: 44px;
+    background: transparent url('../Assets/Icons/אנשי\ קשר.svg') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+
+.titlecontainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
