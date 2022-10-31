@@ -1,0 +1,64 @@
+.tablecontainer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    direction: rtl;
+    font-family: 'heebo';
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #4d3f5a;
+    font-size: 19px;
+}
+
+
+th {
+    padding: 8px;
+    text-align: right;
+    padding-right: 50px;
+    background: #c6cbd142;
+}
+
+td {
+    padding: 15px;
+    padding-right: 50px;
+    background: white;
+    border-bottom: 0.5px solid #ddd;
+    height: 60px;
+    font-weight: 500;
+
+}
+
+.noResult {
+    display: table-caption;
+    margin: 5%;
+}
+
+.iconcopy {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    gap: 8px;
+}
+
+.iconstable {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    gap: 30px;
+}
+
+img {
+    margin-top: 2px;
+}
+
+.iconscontainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 75%;
+}
