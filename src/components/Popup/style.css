@@ -1,0 +1,35 @@
+.popup {
+    padding: 30px;
+    position: absolute;
+    /* height: 173px; */
+    background: white;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    left: 0px;
+    top: 0px;
+    background-color: #3f515a75;
+
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay.close {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    display: inline-block;
+}
