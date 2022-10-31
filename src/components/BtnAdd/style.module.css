@@ -1,0 +1,17 @@
+.add {
+    border-radius: 50%;
+    width: 57px;
+    height: 57px;
+    background: #EE7E54 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+
+img {
+    width: 21px;
+    height: 21px;
+}
