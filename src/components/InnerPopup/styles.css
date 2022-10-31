@@ -15,6 +15,10 @@
     font-weight: 500;
 }
 
+.closeicon {
+    cursor: pointer;
+}
+
 .label {
     text-align: right;
     font-size: 19px;
@@ -27,7 +31,7 @@
 
 .savebtn {
     width: 134px;
-    height: 54px;
+    height: 50px;
     background: #EE7E54 0% 0% no-repeat padding-box;
     border-radius: 10px;
     border: none;

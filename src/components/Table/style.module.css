@@ -14,6 +14,7 @@ table {
     overflow: hidden;
     color: #4d3f5a;
     font-size: 19px;
+    text-align: right;
 }
 
 
@@ -51,6 +52,7 @@ td {
     justify-content: space-between;
     width: max-content;
     gap: 30px;
+    cursor: pointer;
 }
 
 img {

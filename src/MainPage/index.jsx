@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import BtnAdd from '../components/BtnAdd'
 import InnerPopup from '../components/InnerPopup'
 import Input from '../components/Input'
-import Popup from '../components/Popup'
 import Table from '../components/Table'
 import PopupContext from '../PopupContext'
 import styles from "./style.module.css"
+import './pagination.css'
+import Pagination from 'rc-pagination';
 
 function MainPage() {
 
@@ -14,16 +15,37 @@ function MainPage() {
     const [change, setChange] = useState("")
     const { setPopup } = useContext(PopupContext);
 
+    const [perPage, setPerPage] = useState(5);
+    const [size, setSize] = useState(perPage);
+    const [current, setCurrent] = useState(1);
 
+    const PerPageChange = (value) => {
+        setSize(value);
+        const newPerPage = Math.ceil(contacts.length / value);
+        if (current > newPerPage) {
+            setCurrent(newPerPage);
+        }
+    }
+
+    const PaginationChange = (page, pageSize) => {
+        setCurrent(page);
+        setSize(pageSize)
+    }
+
+    const PrevNextArrow = (current, type, originalElement) => {
+        if (type === 'prev') {
+            return <button><i className="fa fa-angle-double-left"></i></button>;
+        }
+        if (type === 'next') {
+            return <button><i className="fa fa-angle-double-right"></i></button>;
+        }
+        return originalElement;
+    }
 
     function getData() {
 
         fetch('http://localhost:3005/user/users', {
-            method: 'Get',
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //   },
-            //   body: JSON.stringify(data),
+            method: 'GET',
         })
             .then((response) => response.json())
             .then((data) => {
@@ -37,13 +59,16 @@ function MainPage() {
     }
     useEffect(() => {
         getData()
-        console.log(contacts);
     }, [change])
+
 
     const search = (value) => {
         setFilterList(contacts.filter(e => e.username.includes(value))
         )
     }
+    const newData = (current, pageSize) => {
+        return filterList.slice((current - 1) * pageSize, current * pageSize);
+    };
 
 
 
@@ -61,7 +86,21 @@ function MainPage() {
 
                     </div>
                     <div className={styles.tablecontainer}>
-                        <Table contacts={filterList} setChange={setChange} />
+                        <Table contacts={newData(current, size)} setChange={setChange} />
+
+
+                    </div>
+                    <div className={styles.pagination}>
+                        <Pagination
+                            className="pagination-data"
+                            onChange={PaginationChange}
+                            total={contacts.length}
+                            current={current}
+                            pageSize={size}
+                            showSizeChanger={false}
+                            itemRender={PrevNextArrow}
+                            onShowSizeChange={PerPageChange}
+                        />
                     </div>
                 </div>
             </div>

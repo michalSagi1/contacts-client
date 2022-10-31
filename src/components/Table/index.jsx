@@ -44,7 +44,8 @@ function Table({ contacts, setChange }) {
                                         <img
                                             src={iconcopy}
                                             alt="copy"
-                                            onClick={""}
+                                            onClick={() => { navigator.clipboard.writeText(val.phone) }}
+
                                         />
                                     </div>
                                 </td>

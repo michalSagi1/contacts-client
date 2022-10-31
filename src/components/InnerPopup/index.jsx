@@ -69,6 +69,7 @@ function InnerPopup({ title, defaultValueName, defaultValuePhone, sorce, setChan
         <div className='up'>
           <div className='title'>{title}</div>
           <img
+            className='closeicon'
             src={close}
             alt="close"
             onClick={() => setPopup("")}
@@ -76,7 +77,7 @@ function InnerPopup({ title, defaultValueName, defaultValuePhone, sorce, setChan
         </div>
         <div className='bodypopup'>
           <div className='label'>שם</div>
-          <Input popup defaultValue={defaultValueName} onChange={(e) => setName(e.target.value)} />
+          <Input popup defaultValue={defaultValueName} onChange={(e) => setName(e.target.value)} autoFocus={true} />
           <div className='label'>טלפון</div>
           <Input popup defaultValue={defaultValuePhone} onChange={(e) => setPhone(e.target.value)} />
         </div>

@@ -13,24 +13,7 @@ function Popup() {
         <div className={`overlay ${popup ? "" : "close"}`}>
             <div className="popup">
                 {popup}
-                {/* <div className='container'>
-                        <div className='up'>
-                            <div className='title'>{title}</div>
-                            <img
-                                src={close}
-                                alt="close"
-                            />
-                        </div>
-                        <div className='bodypopup'>
-                            <div className='label'>שם</div>
-                            <Input popup defaultValue={defaultValue} />
-                            <div className='label'>טלפון</div>
-                            <Input popup />
-                        </div>
 
-                        <button className='savebtn' onClick={onClick}>שמירה</button>
-
-                    </div> */}
             </div>
         </div>
     )
