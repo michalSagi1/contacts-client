@@ -5,7 +5,7 @@ import plus from "../../Assets/Icons/Icon feather-plus-circle.png"
 function BtnAdd({ onClick }) {
     return (
         <button className={styles.add} onClick={onClick}>
-            <img
+            <img className={styles.plus}
                 src={plus}
                 alt={"add"} />
         </button>

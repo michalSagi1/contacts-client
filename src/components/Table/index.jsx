@@ -1,9 +1,6 @@
 import React, { useContext } from 'react'
 import styles from "./style.module.css"
 import iconcopy from '../../Assets/Icons/Icon material-content-copy.svg'
-import icondelete from '../../Assets/Icons/Icon material-delete.svg'
-import iconedit from '../../Assets/Icons/Icon material-edit (3).svg'
-import Popup from '../Popup'
 import InnerPopup from '../InnerPopup'
 import PopupContext from '../../PopupContext'
 
@@ -40,8 +37,8 @@ function Table({ contacts, setChange }) {
                             <tr key={key}>
                                 <td>{val.username}</td>
                                 <td>
-                                    <div className={styles.iconcopy}>{val.phone}
-                                        <img
+                                    <div className={styles.phone}>{val.phone}
+                                        <img className={styles.iconcopy}
                                             src={iconcopy}
                                             alt="copy"
                                             onClick={() => { navigator.clipboard.writeText(val.phone) }}
@@ -52,18 +49,9 @@ function Table({ contacts, setChange }) {
                                 <td>
                                     <div className={styles.iconscontainer}>
                                         <div className={styles.iconstable}>
-                                            <img
-                                                src={iconedit}
-                                                alt="edit"
-                                                onClick={() => setPopup(<InnerPopup title={"עריכת איש קשר"} defaultValueName={val.username} defaultValuePhone={val.phone} sorce={"edit"} id={val.id}></InnerPopup>)
-                                                }
-
-                                            />
-                                            <img
-                                                src={icondelete}
-                                                alt="remove"
-                                                onClick={() => remove(val.id)}
-                                            />
+                                            <div className={styles.edit} onClick={() => setPopup(<InnerPopup title={"עריכת איש קשר"} defaultValueName={val.username} defaultValuePhone={val.phone} sorce={"edit"} id={val.id} setChange={setChange}></InnerPopup>)
+                                            }></div>
+                                            <div className={styles.delete} onClick={() => remove(val.id)}></div>
                                         </div>
                                     </div>
                                 </td>

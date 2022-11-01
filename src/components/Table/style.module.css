@@ -40,11 +40,11 @@ td {
     margin: 5%;
 }
 
-.iconcopy {
+.phone {
     display: flex;
     justify-content: space-between;
     width: max-content;
-    gap: 8px;
+    gap: 10px;
 }
 
 .iconstable {
@@ -53,14 +53,41 @@ td {
     width: max-content;
     gap: 30px;
     cursor: pointer;
+
 }
 
-img {
-    margin-top: 2px;
-}
+
 
 .iconscontainer {
     display: flex;
     justify-content: flex-end;
     width: 75%;
+}
+
+.iconcopy {
+    margin-top: 2px;
+    cursor: pointer;
+
+}
+
+.edit {
+    width: 29px;
+    height: 29px;
+    background: url("../../Assets/Icons/Icon\ material-edit\ \(3\).svg") no-repeat;
+}
+
+.edit:hover {
+    background: url("../../Assets/Icons/Icon\ material-edit\ hover.svg") no-repeat;
+
+}
+
+.delete {
+    width: 29px;
+    height: 29px;
+    background: url("../../Assets/Icons/Icon\ material-delete.svg") no-repeat;
+}
+
+.delete:hover {
+    background: url("../../Assets/Icons/Icon\ material-delete\ hover.svg") no-repeat;
+
 }
