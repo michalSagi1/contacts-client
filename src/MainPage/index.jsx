@@ -7,6 +7,7 @@ import PopupContext from '../PopupContext'
 import styles from "./style.module.css"
 import './pagination.css'
 import Pagination from 'rc-pagination';
+import Spinner from '../components/Spinnner'
 
 function MainPage() {
 
@@ -85,23 +86,26 @@ function MainPage() {
                         <BtnAdd onClick={() => setPopup(<InnerPopup title={"הוספת איש קשר"} sorce={"add"} setChange={setChange}></InnerPopup>)} />
 
                     </div>
-                    <div className={styles.tablecontainer}>
-                        <Table contacts={newData(current, size)} setChange={setChange} />
+                    {contacts.length === 0 ? <Spinner /> :
+                        <>
+                            <div className={styles.tablecontainer}>
+                                <Table contacts={newData(current, size)} setChange={setChange} />
 
 
-                    </div>
-                    <div className={styles.pagination}>
-                        <Pagination
-                            className="pagination-data"
-                            onChange={PaginationChange}
-                            total={contacts.length}
-                            current={current}
-                            pageSize={size}
-                            showSizeChanger={false}
-                            itemRender={PrevNextArrow}
-                            onShowSizeChange={PerPageChange}
-                        />
-                    </div>
+                            </div>
+                            <div className={styles.pagination}>
+                                <Pagination
+                                    className="pagination-data"
+                                    onChange={PaginationChange}
+                                    total={contacts.length}
+                                    current={current}
+                                    pageSize={size}
+                                    showSizeChanger={false}
+                                    itemRender={PrevNextArrow}
+                                    onShowSizeChange={PerPageChange}
+                                />
+                            </div>
+                        </>}
                 </div>
             </div>
         </>
