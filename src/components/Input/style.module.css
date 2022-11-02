@@ -4,7 +4,7 @@
     direction: rtl;
     border: solid 0.2px;
     border-radius: 50px;
-    /* font-family: 'heebo'; */
+    font-family: 'heebo';
     font-weight: 500;
     padding-right: 25px;
     font-size: 17px;
@@ -18,7 +18,7 @@
     direction: rtl;
     border: solid 0.8px;
     border-radius: 50px;
-    /* font-family: 'heebo'; */
+    font-family: 'heebo';
     font-weight: 500;
     padding-right: 25px;
     font-size: 17px;

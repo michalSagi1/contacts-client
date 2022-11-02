@@ -13,6 +13,8 @@
     font-size: 30px;
     color: #4d3f5a;
     font-weight: 500;
+    font-family: 'Heebo';
+
 }
 
 .closeicon {
@@ -26,6 +28,7 @@
     margin-top: 30px;
     margin-bottom: 5px;
     color: #4d3f5a;
+    font-family: 'Heebo';
 
 }
 
@@ -41,6 +44,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 40px;
+    font-family: 'Heebo';
+
 
 }
 
@@ -48,5 +53,7 @@
     margin-top: 20px;
     font-size: 20px;
     color: #4d3f5a;
+    font-family: 'Heebo';
+
 
 }
