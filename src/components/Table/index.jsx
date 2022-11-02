@@ -4,7 +4,7 @@ import iconcopy from '../../Assets/Icons/Icon material-content-copy.svg'
 import InnerPopup from '../InnerPopup'
 import PopupContext from '../../PopupContext'
 
-function Table({ contacts, setChange }) {
+function Table({ contactsList, setChange }) {
     const { setPopup } = useContext(PopupContext);
 
     const remove = (id) => {
@@ -31,8 +31,8 @@ function Table({ contacts, setChange }) {
 
                     </tr>
 
-                    {contacts.length === 0 && <div className={styles.noResult}>אין תוצאות מתאימות</div>}
-                    {contacts.map((val, key) => {
+                    {contactsList.length === 0 && <div className={styles.noResult}>אין תוצאות מתאימות</div>}
+                    {contactsList.map((val, key) => {
                         return (
                             <tr key={key}>
                                 <td>{val.username}</td>
@@ -49,7 +49,7 @@ function Table({ contacts, setChange }) {
                                 <td>
                                     <div className={styles.iconscontainer}>
                                         <div className={styles.iconstable}>
-                                            <div className={styles.edit} onClick={() => setPopup(<InnerPopup title={"עריכת איש קשר"} defaultValueName={val.username} defaultValuePhone={val.phone} sorce={"edit"} id={val.id} setChange={setChange}></InnerPopup>)
+                                            <div className={styles.edit} onClick={() => setPopup(<InnerPopup id={val.id} defaultValueName={val.username} defaultValuePhone={val.phone} sorce={"edit"} setChange={setChange}></InnerPopup>)
                                             }></div>
                                             <div className={styles.delete} onClick={() => remove(val.id)}></div>
                                         </div>

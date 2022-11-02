@@ -7,7 +7,7 @@ import PopupContext from '../PopupContext'
 import styles from "./style.module.css"
 import './pagination.css'
 import Pagination from 'rc-pagination';
-import Spinner from '../components/Spinnner'
+import Loading from '../components/Loading'
 
 function MainPage() {
 
@@ -16,9 +16,35 @@ function MainPage() {
     const [change, setChange] = useState("")
     const { setPopup } = useContext(PopupContext);
 
-    const [perPage, setPerPage] = useState(5);
+
+    // paginations states:
+
+    const [perPage] = useState(5);
     const [size, setSize] = useState(perPage);
     const [current, setCurrent] = useState(1);
+
+    ///
+
+    function getData() {
+
+        fetch('http://localhost:3005/user/users', {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+                setContacts(data)
+                setFilterList(data)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+    useEffect(() => {
+        getData()
+    }, [change])
+
+    //pagination functions:
 
     const PerPageChange = (value) => {
         setSize(value);
@@ -42,25 +68,9 @@ function MainPage() {
         }
         return originalElement;
     }
+    ///
 
-    function getData() {
 
-        fetch('http://localhost:3005/user/users', {
-            method: 'GET',
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Success:', data);
-                setContacts(data)
-                setFilterList(data)
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    }
-    useEffect(() => {
-        getData()
-    }, [change])
 
 
     const search = (value) => {
@@ -83,13 +93,13 @@ function MainPage() {
                     </div>
                     <div className={styles.container}>
                         <Input placeholder="חיפוש" onChange={(e) => search(e.target.value)} />
-                        <BtnAdd onClick={() => setPopup(<InnerPopup title={"הוספת איש קשר"} sorce={"add"} setChange={setChange}></InnerPopup>)} />
+                        <BtnAdd onClick={() => setPopup(<InnerPopup sorce={"add"} setChange={setChange}></InnerPopup>)} />
 
                     </div>
-                    {contacts.length === 0 ? <Spinner /> :
+                    {contacts.length === 0 ? <Loading /> :
                         <>
-                            <div className={styles.tablecontainer}>
-                                <Table contacts={newData(current, size)} setChange={setChange} />
+                            <div >
+                                <Table contactsList={newData(current, size)} setChange={setChange} />
 
 
                             </div>

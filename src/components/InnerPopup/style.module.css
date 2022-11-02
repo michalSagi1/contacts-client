@@ -35,7 +35,6 @@
     background: #EE7E54;
     border-radius: 10px;
     border: none;
-    font-family: 'heebo';
     color: white;
     font-size: 21px;
     display: flex;
@@ -48,7 +47,6 @@
 .message {
     margin-top: 20px;
     font-size: 20px;
-    font-family: 'heebo';
     color: #4d3f5a;
 
 }

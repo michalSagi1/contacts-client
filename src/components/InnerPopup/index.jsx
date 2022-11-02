@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react'
 import Input from '../Input'
 import close from '../../Assets/Icons/Icon material-close.svg'
 import PopupContext from '../../PopupContext'
-import './styles.css'
+import styles from "./style.module.css"
 
 
-function InnerPopup({ title, defaultValueName, defaultValuePhone, sorce, setChange, id }) {
+function InnerPopup({ id, defaultValueName, defaultValuePhone, sorce, setChange }) {
   const [name, setName] = useState(defaultValueName)
   const [phone, setPhone] = useState(defaultValuePhone)
   const [message, setMessage] = useState("")
@@ -65,24 +65,24 @@ function InnerPopup({ title, defaultValueName, defaultValuePhone, sorce, setChan
 
   return (
     <div>
-      <div className='container'>
-        <div className='up'>
-          <div className='title'>{title}</div>
+      <div className={styles.container}>
+        <div className={styles.up}>
+          <div className={styles.title}>{sorce === "add" ? "הוספת איש קשר" : "עריכת איש קשר"}</div>
           <img
-            className='closeicon'
+            className={styles.closeicon}
             src={close}
             alt="close"
             onClick={() => setPopup("")}
           />
         </div>
-        <div className='bodypopup'>
-          <div className='label'>שם</div>
+        <div className={styles.bodypopup}>
+          <div className={styles.label}>שם</div>
           <Input popup defaultValue={defaultValueName} onChange={(e) => setName(e.target.value)} autoFocus={true} />
-          <div className='label'>טלפון</div>
+          <div className={styles.label}>טלפון</div>
           <Input popup defaultValue={defaultValuePhone} onChange={(e) => setPhone(e.target.value)} />
         </div>
-        <div className="message">{message}</div>
-        <button className='savebtn' onClick={sorce === "add" ? () => submitAdd() : () => submitEdit()}>שמירה</button>
+        <div className={styles.message}>{message}</div>
+        <button className={styles.savebtn} onClick={sorce === "add" ? () => submitAdd() : () => submitEdit()}>שמירה</button>
 
       </div>
     </div>

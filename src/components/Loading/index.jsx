@@ -4,7 +4,7 @@ import styles from "./style.module.css"
 
 
 
-function Spinner() {
+function Loading() {
     return (
         <div className={styles.spinner}>
             <img src={spinner}
@@ -13,4 +13,4 @@ function Spinner() {
     )
 }
 
-export default Spinner
+export default Loading

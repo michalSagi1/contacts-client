@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./style.module.css"
-import userImg from '../../Assets/Images/user.jpg'
+import userImg from '../../Assets/Images/user12.jpg'
 
 
 function Header() {
